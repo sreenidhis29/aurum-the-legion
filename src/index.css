@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 100%;
+    
+    --primary: 43 87% 51%;
+    --primary-foreground: 0 0% 0%;
+    
+    --secondary: 4 100% 37%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 43 87% 51%;
+    --accent-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 87% 51%;
+    
+    --radius: 0.5rem;
+
+    --glass: 255 255 255 / 0.04;
+    --glass-border: 255 255 255 / 0.1;
+    --gold-glow: 43 87% 51% / 0.25;
+    --red-glow: 4 100% 37% / 0.25;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-rajdhani overflow-x-hidden;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) transparent;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 10px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-xl border border-white/10 bg-white/5;
+  }
+  
+  .text-glow-gold {
+    text-shadow: 0 0 10px hsla(var(--primary), 0.5);
+  }
+  
+  .text-glow-red {
+    text-shadow: 0 0 10px hsla(var(--secondary), 0.5);
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip: rect(10px, 9999px, 50px, 0); }
+  20% { clip: rect(40px, 9999px, 20px, 0); }
+  40% { clip: rect(80px, 9999px, 10px, 0); }
+  60% { clip: rect(20px, 9999px, 70px, 0); }
+  80% { clip: rect(50px, 9999px, 30px, 0); }
+  100% { clip: rect(10px, 9999px, 60px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(60px, 9999px, 10px, 0); }
+  20% { clip: rect(30px, 9999px, 50px, 0); }
+  40% { clip: rect(70px, 9999px, 20px, 0); }
+  60% { clip: rect(10px, 9999px, 80px, 0); }
+  80% { clip: rect(20px, 9999px, 40px, 0); }
+  100% { clip: rect(50px, 9999px, 10px, 0); }
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
