@@ -1,2 +1,2 @@
 # aurum-the-legion
-The Gold Standard
+The Gold Standard. 
